@@ -1,0 +1,266 @@
+:root {
+    /* Enhanced color palette with semantic naming */
+    --primary-blue: #1E90FF;
+    --primary-light: #F0F8FF;
+    --primary-dark: #0066CC;
+    --accent-green: #32CD32;
+    --accent-light: #F0FFF0;
+    --accent-dark: #228B22;
+    --neutral-dark: #2F4F4F;
+    --alert-error: #FF3B30;
+    --alert-warning: #FF9500;
+    --alert-success: #34C759;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Base styles with better defaults */
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--primary-light);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Enhanced Sidebar */
+.sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
+    padding: 1rem;
+    width: 280px;
+    transform: translateX(0);
+    transition: transform var(--transition-speed) ease;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar .card-header {
+    background-color: #90ee90;
+    color: var(--text-primary);
+    padding: 15px;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid var(--neutral-dark);
+}
+
+.sidebar .card-body {
+    background-color: #6EB6DD;
+    padding: 2px;
+    color: var(--text-primary);
+}
+
+/* Main Content Area */
+#main-content {
+    padding: 20px;
+    border: 1px solid var(--neutral-dark);
+    border-radius: 8px;
+    margin: 15px;
+    transition: margin-left var(--transition-speed) ease, width var(--transition-speed) ease;
+    width: calc(100% - 30px);
+    min-height: calc(100vh - 30px);
+    color: var(--text-primary);
+}
+
+/* Enhanced Visualization Container */
+.plotly-graph-div {
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    background-color: white;
+    padding: 1rem;
+    height: calc(100vh - 200px) !important;
+    width: 100% !important;
+    transition: width var(--transition-speed) ease;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.plot-container,
+.js-plotly-plot {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Improved Button Styles */
+.btn {
+    padding: 0.5rem 1rem;  /* Reduced padding */
+    border-radius: 4px;    /* Smaller radius for compact look */
+    font-weight: 600;
+    transition: all var(--transition-speed);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;    /* Slightly smaller font size */
+    line-height: 1.2;     /* Tighter line height */
+}
+
+#run-button {
+    background-color: var(--alert-error);
+    color: white;
+    padding: 12px;  /* Even smaller padding for run button */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;   /* Reduced letter spacing */
+    margin: 8px 0;          /* Smaller margins */
+    width: 100%;
+}
+
+#run-button:hover {
+    background-color: var(--alert-error);
+    filter: brightness(90%);  /* Darken on hover */
+}
+
+/* Compact styles for smaller buttons */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Disabled button state */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.Select-menu-outer {
+    border: 1px solid var(--primary-blue);
+    border-top: none;
+    background-color: #ddead1;
+    z-index: 1001;
+    color: var(--text-dark); /* Changed to black */
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 4px;
+    padding: 15px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: var(--text-dark); /* Changed to black */
+}
+
+.alert-success {
+    background-color: var(--primary-green);
+    color: var(--text-dark); /* Changed to black */
+    border: 1px solid var(--hover-green);
+}
+
+.alert-danger {
+    background-color: var(--warning-red);
+    color: var(--text-dark); /* Changed to black */
+    border: 1px solid #800000;
+}
+
+/* Table Styles */
+.dash-table-container {
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px 0;
+    color: var(--text-dark); /* Changed to black */
+}
+
+.dash-header {
+    background-color: var(--primary-blue);
+    color: var(--text-dark); /* Changed to black */
+    font-weight: bold;
+    padding: 1px;
+    border-bottom: 2px solid var(--border-dark);
+}
+
+.dash-cell {
+    padding: 2px;
+    border-bottom: 1px solid var(--border-dark);
+    background-color: var(--text-light);
+    color: var(--text-dark); /* Changed to black */
+}
+
+/* Label Styles */
+.fw-bold {
+    color: var(--text-dark);
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+/* Modal Styles */
+.modal-content {
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    color: var(--text-dark); /* Changed to black */
+}
+
+.modal-header {
+    background-color: var(--primary-blue);
+    color: var(--text-dark); /* Changed to black */
+    border-bottom: 2px solid var(--border-dark);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border: 1px solid var(--light-blue);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-blue);
+}
+
+/* Focus States */
+*:focus {
+    outline: 3px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Loading Animation */
+@keyframes loading-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.loading {
+    animation: loading-pulse 1.5s infinite;
+    background-color: var(--primary-blue);
+    color: var(--text-dark); /* Changed to black */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    #main-content {
+        margin-left: 15px;
+        width: calc(100% - 30px);
+    }
+
+    .plotly-graph-div {
+        min-height: 300px;
+    }
+}
