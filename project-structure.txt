@@ -1,0 +1,26 @@
+dssat_viewer/
+│
+├── main.py                    # Entry point, initializes and runs the application
+├── ui/
+│   ├── __init__.py
+│   ├── app.py                 # DSSATViewer class and UI setup
+│   ├── callbacks.py           # Dash callbacks
+│   ├── layouts.py             # UI layout components
+│   ├── dash_thread.py         # Thread for running Dash server
+│
+├── data/
+│   ├── __init__.py
+│   ├── dssat_io.py            # DSSAT file I/O operations
+│   ├── data_processing.py     # Data processing and transformation functions
+│
+├── models/
+│   ├── __init__.py
+│   ├── metrics.py             # MetricsCalculator class
+│
+├── utils/
+│   ├── __init__.py
+│   ├── dssat_paths.py         # DSSAT path finding utilities
+│   ├── file_utils.py          # File handling utilities
+│
+├── config.py                  # Configuration constants
+└── requirements.txt           # Project dependencies
